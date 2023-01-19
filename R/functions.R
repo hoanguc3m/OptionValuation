@@ -287,10 +287,10 @@ create_tree <- function(n_steps, type = "call", s_0 = 100, tick = 10, k = 100, r
     theme_void() +
     geom_segment(data = edges, aes(x = xs, xend = xe, y = ys, yend = ye)) + 
     geom_label(data = nodes, 
-               aes(x = x, y = y, label = label), fill = "white") + # parse = T
+               aes(x = x, y = y, label = label), fill = "white", size = 5) + # parse = T
     geom_label(data = data.table(x = 0:max(nodes$x), y = max(nodes$y) + 1, 
                                  lab = paste0("t = ", 0:max(nodes$x))),
-               aes(x = x, y = y, label = lab), fill = "white") +
+               aes(x = x, y = y, label = lab), fill = "white", size = 5) +
     scale_y_continuous(limits = c(-1,1) + range(nodes$y))
   
 }
